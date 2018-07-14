@@ -64,6 +64,13 @@ public:
    */
   void UpdateEKF(const Eigen::VectorXd &z);
 
+private:
+  /**
+   * Updates common to both Standard and Extended Kalman Filter equations
+   * @param y The difference in measurement and prediction at k+1 ( z - z_pred)
+   */
+  void UpdateCommon(const Eigen::VectorXd &y);
+
 };
 
 #endif /* KALMAN_FILTER_H_ */
